@@ -35,6 +35,8 @@ class MusicTableViewController: UITableViewController, UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        musicData.removeAll()
+        tableView.reloadData()
         guard let searchTerm = searchBar.text else { return }
         fetchMusic(term: searchTerm)
     }
